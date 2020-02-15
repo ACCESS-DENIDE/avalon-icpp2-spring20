@@ -1,0 +1,20 @@
+string buble (string inp){
+	bool change=false;
+	char mem;
+	int len = 0;
+	do{
+		len++;	
+	} while (!(inp[len]==0));
+	do{
+		change = false;
+		for (int i = 0; i < len-1; i++) {
+			if (inp[i] > inp[i + 1]) {
+				change = true;
+				mem = inp[i];
+				inp[i] = inp[i + 1];
+				inp[i + 1] = mem;
+			}
+		}
+	} while (change);
+	return inp;
+}
